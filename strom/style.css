@@ -1,5 +1,5 @@
 body {
-    background-color:#000000;
+    background-color:#1E90FF;
     color: white;
     font-size: 1.5em;
 }
@@ -86,7 +86,7 @@ p {
 /* Android 720p */
 @media only screen and (-webkit-device-pixel-ratio:2) {
     body {
-        background-color:#000000;
+        background-color:#1E90FF;
         color: white;
         font-size: 2em;
     }
