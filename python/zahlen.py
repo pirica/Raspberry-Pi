@@ -14,3 +14,4 @@ except:
 template = "{:0%dd}\n" % math.log10(end)
 with open(out, 'wb') as out_file:
     out_file.writelines(template.format(num) for num in xrange(start, end))
+    
