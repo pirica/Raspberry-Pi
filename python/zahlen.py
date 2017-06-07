@@ -1,3 +1,5 @@
+# python script.py anfangszahl endzahl dateiname
+import math
 import sys
 
 try:
@@ -5,11 +7,10 @@ try:
     end = int(sys.argv[2])
     out = sys.argv[3]
 
-except Exception as error:
+except:
     print("error")
     sys.exit(-1)
 
-out_file = open(out, "a")  # a versucht Datei zu öffnen, wenn nicht da, erstellen
-for i in range(start, end):  # range erstellt Zahlen zwischen start & stop
-    out_file.write(str(i) + '\n')  # i wird jede Runde einen Wert höher
-out_file.close()
+template = "{:0%dd}\n" % math.log10(end)
+with open(out, 'wb') as out_file:
+    out_file.writelines(template.format(num) for num in xrange(start, end))
