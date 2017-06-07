@@ -1,15 +1,14 @@
-import math
 import sys
 
 try:
-    start = int(sys.argv[1])  # python script.py *ANFANGSZAHL* endzahl
-    end = int(sys.argv[2])  # python script.py anfangszahl *ENDZAHL*
-    out = sys.argv[3]  # python script.py anfangszahl endzahl *DATEINAME/SPEICHERORT*
-
+    start = int(sys.argv[1])
+    end = int(sys.argv[2])
+    out = sys.argv[3]
 except:
-    print("error")  # Fehlermeldung
-    sys.exit(-1)  # Beendung des Skripts bei Falscheingabe
-
-template = "{:0%dd}\n" % math.log10(end)  #
-with open(out, 'wb') as out_file:  #
-    out_file.writelines(template.format(num) for num in xrange(start, end))  #
+    print("error")
+    sys.exit(-1)
+    
+out_file = open(out, "a")
+for i in range(start, end):
+    out_file.write(str(i)+'\n')
+out_file.close()
